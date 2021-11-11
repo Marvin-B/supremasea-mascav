@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Partie</th>
+            <th>Date de création</th>
+            <th>Adversaire</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for partie in parties %}
+            <tr>
+                <td>Partie #{{ partie.id }}</td>
+                <td>{{ partie.dateDebut|date('d/m/Y H:i') }}</td>{# |format_date('long', 'short', format_datetime, format_time #}
+                <td>Adversaire</td>
+                <td>
+                    <a href="{{ path('afficher_partie', {partie: partie.id}) }}" class="btn btn-info">Reprendre la
+                        partie</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

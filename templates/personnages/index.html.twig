@@ -1,0 +1,183 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Personnages{% endblock %}
+
+{% block body %}     <div class="camp">
+    <h2 class="textcenter">Choisissez votre</h2>
+    <h3 class="textcenter">CAMP</h3>
+</div>
+    <div id="myApp">
+        <section>
+            <div class="tabs">
+                <nav>
+                    <router-link to="/">Tous</router-link> -
+                    <router-link to="/requin">Requins</router-link> -
+                    <router-link to="/dauphin">Dauphins</router-link> -
+                </nav>
+
+            </div>
+
+            <div id="content">
+                <router-view></router-view>
+
+
+            </div>
+
+
+        </section>
+    </div>
+
+
+    <script>
+        // source: Vue3 documentation : "https://next.router.vuejs.org/guide/#javascript"
+
+        const appCode = {
+            data() {
+                return {
+                }
+            }
+        };
+
+
+        // ROUTING
+        // 1. define some components
+        const tout = { template: '<div class="requin"><img class="petit" src="{{ asset('images/requins/El_Tiburon.png') }}" alt="El Tiburon"><img class="petit" src="{{ asset('images/requins/la_dent_de_la_mer.png') }}" alt="la dent de la mer"><img class="petit" src="{{ asset('images/requins/le_charque.png') }}" alt="le charque"><img class="petit" src="{{ asset('images/requins/marteaurnade.png') }}" alt="marteaunade"><img class="petit" src="{{ asset('images/requins/requo_vulovic.png') }}" alt="requo vulovic"><img class="petit" src="{{ asset('images/requins/megal-x0d18.png') }}" alt="megal-x0d18"><img class="petit" src="{{ asset('images/requins/scie-borg.png') }}" alt="scie borg"><img class="petit" src="{{ asset('images/requins/shar_pille.png') }}" alt="shar pille"><img class="petit" src="{{ asset('images/requins/sharkness.png') }}" alt="sharkness"><img class="petit" src="{{ asset('images/requins/tony_shark.png') }}" alt="tony shark"> <img class="petit" src="{{ asset('images/dauphins/boto-feu.png') }}" alt="boto-feu"><img class="petit" src="{{ asset('images/dauphins/dau_quixote.png') }}" alt="dau quixote"><img class="petit" src="{{ asset('images/dauphins/daulouphin.png') }}" alt="daulouphin"><img class="petit" src="{{ asset('images/dauphins/delphine.png') }}" alt="delphine"><img class="petit" src="{{ asset('images/dauphins/dolph_lundgren.png') }}" alt="dolph lundgren"><img class="petit" src="{{ asset('images/dauphins/fawkes_hawk.png') }}" alt="fawkes hawk"><img class="petit" src="{{ asset('images/dauphins/flippe-peur.png') }}" alt="flippe peur"><img class="petit" src="{{ asset('images/dauphins/metal_dolph.png') }}"> <img class="petit" src="{{ asset('images/dauphins/sire_adolphe_de_bergerac.png') }}" alt="sire adolphe de bergerac"><img class="petit" src="{{ asset('images/dauphins/will_e.png') }}" alt="will E"></div>' }
+        const requin = { template: '<div class="requin"><img class="petit" src="{{ asset('images/requins/El_Tiburon.png') }}" alt="El Tiburon"><img class="petit" src="{{ asset('images/requins/la_dent_de_la_mer.png') }}" alt="la dent de la mer"><img class="petit" src="{{ asset('images/requins/le_charque.png') }}" alt="le charque"><img class="petit" src="{{ asset('images/requins/marteaurnade.png') }}" alt="marteaunade"><img class="petit" src="{{ asset('images/requins/requo_vulovic.png') }}" alt="requo vulovic"><img class="petit" src="{{ asset('images/requins/megal-x0d18.png') }}" alt="megal-x0d18"><img class="petit" src="{{ asset('images/requins/scie-borg.png') }}" alt="scie borg"><img class="petit" src="{{ asset('images/requins/shar_pille.png') }}" alt="shar pille"><img class="petit" src="{{ asset('images/requins/sharkness.png') }}" alt="sharkness"><img class="petit" src="{{ asset('images/requins/tony_shark.png') }}" alt="tony shark"></div>' }
+        const dauphin = { template: '<div class="requin"><img class="petit" src="{{ asset('images/dauphins/boto-feu.png') }}" alt="boto-feu"><img class="petit" src="{{ asset('images/dauphins/dau_quixote.png') }}" alt="dau quixote"><img class="petit" src="{{ asset('images/dauphins/daulouphin.png') }}" alt="daulouphin"><img class="petit" src="{{ asset('images/dauphins/delphine.png') }}" alt="delphine"><img class="petit" src="{{ asset('images/dauphins/dolph_lundgren.png') }}" alt="dolph lundgren"><img class="petit" src="{{ asset('images/dauphins/fawkes_hawk.png') }}" alt="fawkes hawk"><img class="petit" src="{{ asset('images/dauphins/flippe-peur.png') }}" alt="flippe peur"><img class="petit" src="{{ asset('images/dauphins/metal_dolph.png') }}" alt="metal dolph"> <img class="petit" src="{{ asset('images/dauphins/sire_adolphe_de_bergerac.png') }}" alt="sire adolphe de bergerac"><img class="petit" src="{{ asset('images/dauphins/will_e.png') }}" alt="will E"></div>' }
+
+
+
+        // 2. define some routes
+        const myRoutes = [
+            { path: '/', component: tout },
+            { path: '/requin', component: requin },
+            { path: '/dauphin', component: dauphin }
+
+        ]
+        // 3. create the router instance
+        const myRouter = VueRouter.createRouter({
+            // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
+            history: VueRouter.createWebHashHistory(),
+            routes: myRoutes
+        })
+
+        myApp = Vue.createApp(appCode)
+        // 5. use the router
+        myApp.use(myRouter)
+        myApp.mount('#myApp')
+
+    </script>
+
+    <script>
+        const appCode = {
+            data() {
+                return {
+
+                    afficherDauphin : false,
+                    afficherRequin : false,
+                    currentTab: 'fruits',
+                    tabs: ['fruits', 'veges'],
+
+                    tout: [
+                        {
+                            index: 0,
+                            nom: "Marteaurnade",
+                            descrition: "Son marteau, Bien qu'il en soit déjà un lui-même, lui permet de briser des obstacles sans devenir ",
+                            role: "Rapidité",
+                        },
+                        {
+                            index: 1,
+                            nom: "Tony Shark",
+                            descrition: "Je ne dis pas qu'ils sont la même personne mais on ne la jamais vu lui et le requin araignée dans la même pièce au même moment!",
+                            role: "leader",
+
+                        },
+                        {
+                            index: 2,
+                            nom: "Requo Vulovic",
+                            descrition: "Il insiste être de l'espèce du 'Requin panthère' malgré que sa tête applatie et sa dentition attroce le place plus proche du bouledogue qu'autre chose. Ne retire jamais ses lunnettes de soleil.",
+                            role: "Intelligence",
+
+
+                        },
+                        {
+                            index: 3,
+                            nom: "Will E",
+                            descrition: "Vétéran des guerres humaines, il remercie pourtant souvent une certaine 'Jesse' de l'avoir sauvé.Excellent démagogue.",
+                            role: "leader",
+                            image: "images/king_shark.png",
+
+
+                        },
+                        {
+                            index: 4,
+                            nom: "Fawkes Hawk",
+                            descrition: "Bras droit de Will E.Malgré sa position, il a un orque-oeuil ",
+                            role: "Intelligence",
+
+
+                        },
+                        {
+                            index: 5,
+                            nom: "Boto-feu",
+                            descrition: "Il effraie souvent sans s'en rendre compte de par sa carrure imposante. Pourtant, il ne cherche qu'à apporter son amour pour la vie et est même cuisinier volontaire pour les espèce en voie de disparition.",
+                            role: "Force",
+
+
+                        },
+
+                    ],
+                    requin: [
+                        {
+                            index: 0,
+                            nom: "Marteaurnade",
+                            descrition: "Son marteau, Bien qu'il en soit déjà un lui-même, lui permet de briser des obstacles sans devenir ",
+                            role: "Rapidité",
+                        },
+                        {
+                            index: 1,
+                            nom: "Tony Shark",
+                            descrition: "Je ne dis pas qu'ils sont la même personne mais on ne la jamais vu lui et le requin araignée dans la même pièce au même moment!",
+                            role: "leader",
+                        },
+                        {
+                            index: 2,
+                            nom: "Requo Vulovic",
+                            descrition: "Il insiste être de l'espèce du 'Requin panthère' malgré que sa tête applatie et sa dentition attroce le place plus proche du bouledogue qu'autre chose. Ne retire jamais ses lunnettes de soleil.",
+                            role: "Intelligence",
+                        }
+                    ],
+                    dauphin: [
+                        {
+                            index: 0,
+                            nom: "Will E",
+                            descrition: "Vétéran des guerres humaines, il remercie pourtant souvent une certaine 'Jesse' de l'avoir sauvé.Excellent démagogue.",
+                            role: "leader",
+                            image: "images/king_shark.png",
+                        },
+                        {
+                            index: 1,
+                            nom: "Fawkes Hawk",
+                            descrition: "Bras droit de Will E.Malgré sa position, il a un orque-oeuil ",
+                            role: "Intelligence",
+                        },
+                        {
+                            index: 2,
+                            nom: "Boto-feu",
+                            descrition: "Il effraie souvent sans s'en rendre compte de par sa carrure imposante. Pourtant, il ne cherche qu'à apporter son amour pour la vie et est même cuisinier volontaire pour les espèce en voie de disparition.",
+                            role: "Force",
+                        }
+                    ],
+
+                }
+            }
+        };
+
+
+        myApp = Vue.createApp(appCode);
+        myApp.mount("#content");
+    </script>
+    <script src="{{ asset('../style/css/navmobile.js') }}">
+
+    </script>
+{% endblock %}

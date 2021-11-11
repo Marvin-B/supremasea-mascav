@@ -1,0 +1,89 @@
+//Personnages
+
+.camp {
+    margin-top: 100px;
+    margin-bottom: 200px;
+h2{
+    text-transform: uppercase;
+    color: white;
+    font-size: 40px;
+}
+
+h3{
+    margin-top: 15px;
+    font-size: 60px;
+    color: white;
+transform: rotate(3deg);
+}
+}
+
+
+    .tabs{
+        height: 40px;
+        background-color:$blue;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        margin-bottom: 150px;
+        justify-content: center;
+        
+        word-spacing: 1rem;
+        nav{
+            background-color:$blue;
+            
+            justify-content: space-evenly;
+            a:-webkit-any-link {
+                color: $white;
+                cursor: pointer;
+                text-decoration: none;
+                &:hover{
+                  text-decoration: underline;
+                }
+              }
+            ul{
+                li{
+                    display: inline;
+                    font-size: 40px;
+                    a{
+                        text-decoration: none;
+                        list-style: none;
+                        color: $white;
+
+                        &:active{
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .requin{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        .petit{
+            margin: 20px;
+            width: 17%;
+            &:hover{
+                transform:scale(1.3);
+                transition:.3s;
+            }
+        }
+    }
+
+    .cartes{
+      display: flex;
+      flex-flow: row wrap;
+    
+      ul{
+        li{
+          background-color: grey;
+    list-style: none;
+    margin-left: 40px;
+    width: 200px;
+    height: 400px;
+    }
+    
+      }
+    }
+

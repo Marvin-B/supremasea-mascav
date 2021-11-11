@@ -1,0 +1,77 @@
+
+<button id="refresh">Refresh</button>
+<div id="des">
+    <button id="des-lancer">Lancer les dés</button>
+    <span id="de-bleu" style="background-color:blue">
+            1
+        </span>
+    <span id="de-vert" style="background-color:green">
+            2
+        </span>
+    <span id="de-rouge" style="background-color:red">
+            3
+        </span>
+</div>
+<div class="content">
+<div class="joueur">
+    <h2>Joueur 1</h2>
+    <div class="joueur-cartes">
+    {% for i in 0..9 %}
+            {% for j in partie.terrainJ1[i] %}
+                {# Id de la carte {{ j }} #}
+                <img src="{{ asset( cartes[j].image ) }}" alt="{{ asset( cartes[j].image ) }}">
+            {% endfor %}
+    {% endfor %}
+    </div>
+</div>
+
+<div class="plateau ">
+    {% for i in 0..10 %}
+            {# {{ terrains[i] }} #}
+            <img src="{{ asset('images/plateau/'~terrains[i]) }}" alt="">
+    {% endfor %}
+</div>
+
+<div class="joueur">
+    <h2>Joueur 2</h2>
+    <div class="joueur-cartes rotation">
+    {% for i in 9..0 %}
+            {% for j in partie.terrainJ2[i] %}
+                {# Id de la carte {{ j }} #}
+                <img src="{{ asset( cartes[j].image ) }}" alt="{{ asset( cartes[j].image ) }}">
+            {% endfor %}
+    {% endfor %}
+    </div>
+</div>
+
+</div>
+<script src="{{ asset('script/jquery.js') }}"></script>
+<script src="{{ asset('script/jquery-ui.js') }}"></script>
+<script>
+
+
+    var des = document.getElementById('des-lancer');
+    des.onclick = getNumber;
+    function getNumber(){
+
+        var min=1;
+        var max=3;
+        var randomnumberbleu=Math.floor(Math.random() * (max) + min);
+        var randomnumbervert=Math.floor(Math.random() * (max) + min);
+        var randomnumberrouge=Math.floor(Math.random() * (max) + min);
+
+
+        $('#de-bleu').html(randomnumberbleu);
+        $('#de-vert').html(randomnumbervert);
+        $('#de-rouge').html(randomnumberrouge);
+    }
+    $( function() {
+        $("img").draggable();
+    });
+
+    $('#refresh').click(function(){
+        $('#de-bleu').html(1);
+        $('#de-vert').html(2);
+        $('#de-rouge').html(3);
+    })
+</script>

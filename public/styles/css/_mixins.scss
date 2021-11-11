@@ -1,0 +1,28 @@
+@function interligne($taillePolice){
+  $result: $taillePolice * 1.5;
+  @return #{$result}+"px";
+}
+
+
+@mixin flexElement($justifyContent:center,$alignItems:center,$flexDirection:row){
+  display:flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  flex-direction: $flexDirection;
+}
+
+@mixin typographie($police:'OpenSans',$taille:#{$basicSize}){
+  font-family:$police;
+  font-size:#{$taille}+"px";
+  line-height:interligne($taille);
+}
+
+@mixin backgroundImage($image,$pourcentage:100%){
+  background: url("../images/#{$image}") no-repeat center/#{$pourcentage};
+  background-size: cover;
+}
+
+@mixin gridElement($gridColumn:1){
+  grid-column: $gridColumn;
+  grid-row: 1;
+}

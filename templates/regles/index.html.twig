@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ReglesController!{% endblock %}
+
+{% block body %}
+    <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/-vmOeF-FBTI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    <div class="regles">
+    <div class="row">
+        <h1>Règles du jeu</h1>
+        <hr>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <h2>Préparation du plateau</h2>
+            <p>Tout d’abord, placez les cases plateau dans le bon sens. Requinawa est orientée côté requin et Philadolphia côté dauphin. Ce sont vos deux capitales, à partir de celles-ci placez les autres cases qui correspondent au paysage en fond les unes à côté des autres.</p>
+            <p>Une fois fait, placez chaque leader (Tony Shark ou Will E.) au-dessus de leur capitale respective et une carte de chaque couleur, rangées dans l’ordre que vous voulez, au-dessus de ce dernier.</p>
+            <p>Votre capitale doit avoir 4 cartes personnage placées sur elle, la case adjacente doit en avoir 3, la suivante 2 ainsi de suite jusqu’à avoir placé tous les personnages de chaque espèce.</p>
+            <h2>Caractéristiques des cartes</h2>
+            <p>Vos personnages ont chacun un élément représenté par la couleur de leur carte et le symbole en haut à gauche : La force en rouge, la rapidité en vert et l’intelligence en bleu</p>
+            <p>La règle à retenir est la suivante : la force bat l’intelligence tandis que l’intelligence bat la rapidité qui elle bat la force.</p>
+            <p>Le chiffre se situant à côté de l’élément de la carte est son niveau, il sert à déterminer l’issue des combats entre personnages du même élément et est compris entre 1 et 3, avec 1 étant le plus bas et 3 le plus haut.</p>
+            <h2>Spécialité du Leader</h2>
+            <p>Le leader est le plus puissant personnage de votre armée, il est de niveau 4 et applique toujours la loi du plus fort, prenant la même couleur que son adversaire. A chaque victoire cependant, il perd du niveau égal à la différence entre le sien et celui de l’adversaire qu’il a vaincu pendant un tour de jeu.</p>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <p>Un dauphin ou un requin bien placé lorsqu’il est faible en viendra à bout, enfin, seulement si vous ne lui laissez pas le temps de se reposer jusqu’au tour suivant.</p>
+            <h2>Déroulement d'une partie</h2>
+            <p>Chaque joueur lance au départ un dé et c’est à celui qui aura obtenu le plus gros résultat de démarrer la partie.</p>
+            <p>Pour commencer son tour, le joueur doit lancer les trois dés colorés mis à sa disposition. Ensuite, il choisit un des dés et fait avancer le personnage de son choix du montant indiqué. Celui-ci doit être du même élément que le dé, ainsi, si le dé vert indique « 2 », le joueur peut déplacer un de ses personnages « rapidité » de deux cases.</p>
+            <p>Si un personnage déplacé est recouvert par une ou deux autres cartes, il les prendra avec lui pendant son déplacement.</p>
+            <p>Après avoir utilisé son premier dé, le joueur peut choisir d’utiliser l’un de ses autres dés encore disponibles ou de finir son tour.</p>
+            <h3>Déroulement d'un combat</h3>
+            <p>Après un déplacement, il est possible que votre personnage se soit arrêté face à l’un de ceux de votre adversaire, si cela arrive, un combat démarre alors.</p>
+            <p>On applique le principe des éléments vu en page 2 pour résoudre le conflit : prenons par exemple une carte rapidité comme le Daulouphin pour le joueur dauphin et une carte intelligence comme La Dent de la Mer pour les requins.</p>
+            <p>Bien que son niveau dépasse celui de La Dent de la Mer, le Daulouphin perd le combat car sa rapidité est vaincue par l’intelligence.</p>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12">
+            <p>Ainsi, le Daulouphin est maintenant hors combat et est retiré du jeu jusqu’à la fin de la partie. En revanche si les deux personnages sont du même élément, c’est le principe des niveaux qui s’applique.</p>
+            <p>Reprenons notre Daulophin mais faisons le se battre contre Marteaurnade, ils sont tous deux des personnages « rapidité » mais Daulouphin est de niveau 3 il remporte donc la victoire contre Marteaurnade qui n’est, lui, que de niveau 2.</p>
+            <p>Le dernier cas de figure que vous pourrez rencontrer est le suivant :
+                Les deux personnages se faisant face sont de même élément et de même niveau.
+
+                Si cela arrive, les deux personnages survivent et reculent chacun d’une case sur le plateau.
+
+                Si plus de deux personnages se trouvent en conflit en même temps, les deux personnages placés au-dessus de la pile se battent en premier, si l’un d’eux remporte l’affrontement, il se bat contre le personnage suivant de la pile adverse jusqu’à ce que le conflit soit résolu
+
+                Un personnage battant en retraite sur une case ou un ennemi est présent déclenchera un nouveau conflit qui devra être résolu après que le conflit initial soit terminé.
+            </p>
+            <h3>Fin d'une partie</h3>
+            <p>La victoire s’obtient de deux façons :</p>
+            <ul>
+                <li>La première est simple, il vous suffit de détruire tous les personnages de l’adversaire.</li>
+                <li>La seconde consiste à déplacer un de vos personnages dans la capitale ennemie et de remporter le combat si un personnage ennemi y est également présent.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

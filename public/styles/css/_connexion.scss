@@ -1,0 +1,170 @@
+
+.connexion{
+    h1{
+        color: $background;
+        font-size: 50px;
+    }
+    margin-top: 600px;
+margin: 0 auto;   
+ background-color: $white;
+    width: 75%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .container {
+        
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        justify-self: center;
+        text-align: center;
+        
+        
+        .text {
+             background-color: red;
+             width: 60%;
+             height: 114px;
+        }
+
+        input{
+            width: 900px;
+            margin-top: 60px;
+            height: 50px;
+            border: none;
+            border-radius: 10px;
+            -moz-box-shadow:    3px 3px 2px 2px #ccc;
+            -webkit-box-shadow: 3px 3px 2px 2px #ccc;
+            box-shadow:         3px 3px 2px 2px #ccc;
+
+        }
+        ::placeholder{
+            padding-left: 40px;
+            color: $background;
+        }
+       
+        .button { 
+            width: 200px;
+            height: 50px;
+            box-shadow: none;
+            border-radius: 0px;
+            background-color: $blue;
+            border: none;
+            color: $white;
+            padding: 10px 30px 10px 30px;
+        }
+        p{
+            color: $background;
+            margin-top: 20px;
+
+            .mdpforgot{
+                text-decoration: underline;
+            }
+        }
+    }
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+
+.inscription{
+    h1{
+        color: $background;
+        font-size: 50px;
+    }
+    margin-top: 600px;
+margin: 0 auto;   
+ background-color: $white;
+    width: 75%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .container {
+        
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        justify-self: center;
+        text-align: center;
+        
+        
+        .text {
+             background-color: red;
+             width: 60%;
+             height: 114px;
+        }
+
+        input{
+            width: 900px;
+            margin-top: 60px;
+            height: 50px;
+            border: none;
+            border-radius: 10px;
+            -moz-box-shadow:    3px 3px 2px 2px #ccc;
+            -webkit-box-shadow: 3px 3px 2px 2px #ccc;
+            box-shadow:         3px 3px 2px 2px #ccc;
+
+        }
+        ::placeholder{
+            padding-left: 40px;
+            color: $background;
+        }
+       
+        .button { 
+            width: 200px;
+            height: 50px;
+            box-shadow: none;
+            border-radius: 0px;
+            background-color: $blue;
+            border: none;
+            color: $white;
+            padding: 10px 30px 10px 30px;
+        }
+        p{
+            color: $background;
+            margin-top: 20px;
+
+            .mdpforgot{
+                text-decoration: underline;
+            }
+        }
+    }
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+
+@media all and (max-width: 991px)
+{
+    .connexion .container input {
+        width: 75%;
+        margin-top: 60px;
+        height: 50px;
+        border: none;
+        border-radius: 10px;
+        -moz-box-shadow: 3px 3px 2px 2px #ccc;
+        -webkit-box-shadow: 3px 3px 2px 2px #ccc;
+        box-shadow: 3px 3px 2px 2px #ccc;
+    }
+    .connexion h1 {
+        color: #191919;
+        font-size: 40px;
+    }
+
+    .inscription .container input {
+        width: 75%;
+        margin-top: 60px;
+        height: 50px;
+        border: none;
+        border-radius: 10px;
+        -moz-box-shadow: 3px 3px 2px 2px #ccc;
+        -webkit-box-shadow: 3px 3px 2px 2px #ccc;
+        box-shadow: 3px 3px 2px 2px #ccc;
+    }
+    .inscription h1 {
+        color: #191919;
+        font-size: 40px;
+    }
+}
+

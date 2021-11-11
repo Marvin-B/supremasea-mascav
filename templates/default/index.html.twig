@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+
+
+{% block body %}
+
+    <header>
+        <div class="logo wow fadeIn" data-wow-delay="0.2s">
+            <img class="imgcenter" src="{{ asset('images/supremasea.png') }}" alt="Supremasea logo">
+            <h1 class="textcenter">La conquête du monde à portée de nageoire</h1>
+        </div>
+    </header>
+    <section id="presentation">
+        <div class="margin wow fadeIn" data-wow-delay="0.2s">
+
+            <h2>Présentation</h2>
+            <h3>Supremasea</h3>
+            <p>Dans un futur apocalyptique, les requins et les dauphins autrefois alliés dans leur lutte vertueuse
+                contre l’humanité qui polluait les océans, se livrent désormais une guerre sans merci.</p>
+            <p>Choisissez votre camp et triomphez sous les mers pour assurer à votre espèce le contrôle de la Terre.
+                La conquête du monde est entre vos nageoires !
+            </p>
+            <div class="btn-1">
+                <button><a href="{{ path('regles') }}">Règles du jeu</a></button>
+                <button><a href="{{ path('app_register') }}">Inscris-toi !</a></button>
+            </div>
+        </div>
+    </section>
+    <section id="base" class="wow fadeIn" data-wow-delay="0.2s">
+        <h2 class="textcenter">Les bases</h2>
+        <h3 class="textcenter">Supremasea</h3>
+    </section>
+    <section class="rules margin wow fadeIn" data-wow-delay="0.6s">
+        <div class="texte">
+            <h2>Intelligence</h2>
+            <p>
+                <q> La proie rapide n’est rien face à la supériorité de l’esprit  </q>
+                <br>
+                - Requonfucius, Grand Philosophe Requin de Sharkhai
+            </p>
+            <p>
+                Les capacités physiques de vos troupes ne sont pas la seule arme mise à votre disposition. Les requins et les dauphins adeptes de la ruse sont des experts lorsqu’il faut chasser des opposants qui misent sur la vitesse.
+            </p>
+            <p>
+                Cependant, sans réelles capacités physique, ces créatures aussi malines qu’elle puisse être seront remises à leur place à grands coups de dents par les opposants passés maitres dans l’art de la force brute.
+            </p>
+        </div>
+        <div class="images">
+            <img src="{{ asset('images/specialites/intelligence.png') }}" alt="">
+        </div>
+    </section>
+
+    <section class="rules margin wow fadeIn" data-wow-delay="0.6s">
+        <div class="images">
+            <img src="{{ asset('images/specialites/vitesse.png') }}" alt="">
+        </div>
+        <div class="texte">
+            <h2>Rapidité</h2>
+            <p>
+                <q>Le grand requin blanc, essoufflé, se trouva fort dépourvu quand le courant fut venu </q>
+                <br>
+                - Delphine, citant un fameux fabuliste du temps des humains.
+            </p>
+            <p>
+                Les adeptes de la rapidité ne sont peut-être pas aussi fort que ces barbares écrasant leurs proies d’un coup de nageoire mais il leur en font voir de toutes les couleurs !
+            </p>
+            <p>
+                Ce sont ces maudits savants qui viennent tout gâcher ! Leurs stupides inventions et leurs stratagèmes ridicules rendent la vitesse complétement inutile.
+            </p>
+        </div>
+    </section>
+    <section class="rules margin wow fadeIn" data-wow-delay="0.6s">
+        <div class="texte">
+            <h2>Force</h2>
+            <p>
+                <q>Dans ce monde il y a deux types de personnes, ceux qui ont des dents aiguisées et ceux qui coulent, toi, tu coules.</q>
+                <br>
+                - Le Requin des Bois de l’Est
+            </p>
+            <p>
+                Les grands, les puissants, les musclés ! Ces créatures distribuent des coups à droite et à gauche à tous ceux qui osent les regarder de travers, face à eux, les petits intellos de pacotille n’ont qu’à bien se tenir.
+            </p>
+            <p>
+                Mais la petite friture rapide et fugace ont une fâcheuse tendance à les faire tourner en rond, et ceux qui échappent facilement à ces monstres de part leur vitesse sont souvent ceux qui ne se privent pas de moquer nos grands gaillards et leur font vivre un véritable enfer sous-marin...
+            </p>
+        </div>
+        <div class="images">
+            <img src="{{ asset('images/specialites/force.png') }}" alt="">
+        </div>
+    </section>
+
+{% endblock %}

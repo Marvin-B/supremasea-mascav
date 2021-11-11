@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Supremasea - {% block title %}{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+            <!--encore_entry_link_tags('app')-->
+            <link rel="stylesheet" href="{{ asset('styles/css/style.css') }}">
+            <link rel="stylesheet" href="{{ asset('styles/css/animate.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('styles/css/bootstrap.min.css') }}">
+            <!-- Bootstrap css -->
+            {# <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"> #}
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="{{ asset('script/vue.js') }}"></script>
+            <script src="{{ asset('script/vue-router.js') }}"></script>
+            <!-- Bottstrap JS -->
+            {# <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> #}
+
+        {% endblock %}
+    </head>
+    <body>
+        {% block nav %}
+            {#
+            <nav class="menu"><label for="toggle">☰</label>
+            <input type="checkbox" id="toggle">
+            <ul class="main_pages">
+                <li><a href="{{ path('homepage') }}">Accueil</a></li>
+                <li><a href="{{ path('homepage') }}">Actualités</a></li>
+                <li><a href="{{ path('personnages') }}">Personnages</a></li>
+                <li><a href="http://www.simon-guillet.fr/promo/">Acheter le jeu</a></li>
+                {% if app.user %}
+                    <li><a href="{{ path('app_logout') }}">Deconnexion</a></li>
+                    <li><a href="{{ path('nouvelle_partie') }}">Nouvelle partie</a></li>
+                {% endif %}
+                {% if app.user == false %}
+                    <li><a href="{{ path('app_login') }}">Connexion</a></li>
+                    <li><a href="{{ path('app_register') }}">Inscription</a></li>
+                {% endif %}
+                <li><button><a href="{{ path('profil') }}">Jouer maintenant</a></button></li>
+            </ul>
+        </nav>
+            #}
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarColor02">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{{ path('homepage') }}">Accueil
+                                    <span class="visually-hidden">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('regles') }}">Règles du jeu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('personnages') }}">Personnages</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://www.simon-guillet.fr/promo/">Acheter le jeu</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Jouer en ligne</a>
+                                <div class="dropdown-menu">
+                                    {% if app.user %}
+                                        <a href="{{ path('app_logout') }}" class="dropdown-item">Déconnexion</a>
+                                        <a href="{{ path('nouvelle_partie') }}" class="dropdown-item">Nouvelle partie</a>
+                                        <a href="{{ path('profil') }}" class="dropdown-item">Mon profil</a>
+                                    {% endif %}
+                                    {% if app.user == false %}
+                                        <a href="{{ path('app_login') }}" class="dropdown-item">Connexion</a>
+                                        <a href="{{ path('app_register') }}" class="dropdown-item">Inscription</a>
+                                    {% endif %}
+
+
+                                </div></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+        {% endblock %}
+        {% block body %}{% endblock %}
+        <footer>
+        {% block footer %}
+
+                <nav>
+                    <a href="http://www.simon-guillet.fr/promo/panier.php">Acheter</a>
+                    <a href="{{ path('homepage') }}">Jeu en ligne</a>
+                    <a href="http://149.91.90.177/mascav/">Contact</a>
+                    <a href="#">Revenir au sommet</a>
+                </nav>
+                <div class="grille">
+                    <ul>
+                        <li><a href="http://149.91.90.177/mascav/">Service consommateurs</a></li>
+                        <li><a href="http://www.simon-guillet.fr/promo/legal.php#confidentialite">Politique de confidentialité</a></li>
+                        <li><a href="http://www.simon-guillet.fr/promo/legal.php#utilisation">Conditions générales d'utilisation</a></li>
+                        <li><a href="">Cookies</a></li>
+                        <li><a href="http://www.simon-guillet.fr/promo/legal.php#divulgation">Politique de divulgation responsable</a></li>
+                    </ul>
+                    <div class="reseaux">
+                        <p>Réseaux sociaux : </p>
+                        <a href="https://www.facebook.com/profile.php?id=100074103799212"><img src="{{ asset('images/footer/facebook2.png') }}" alt="Facebook"></a>
+                        <a href="http://twitter.com"><img src="{{ asset('images/footer/twitter.png') }}" alt="Twitter"></a>
+                        <a href="http://intagram.com"><img src="{{ asset('images/footer/insta.png') }}" alt="Instagram"></a>
+                    </div>
+                </div>
+                <p class="info">
+                    © 2021 Mascav. Tous droits réservés. Tout le contenu audio, visuel et textuel de ce site (y compris tous les noms, personnages, images et logo) est protégé par les droits d'auteur et autres droits de propriété intellectuelle détenus par Mascav.        </p>
+                <img src="{{ asset('images/supremasea.png') }}" alt="SupremaSea" class="logo">
+
+        {% endblock %}
+        </footer>
+
+        <script src="{{ asset('styles/css/wow.min.js') }}"></script>
+        <script>
+            new WOW().init();
+        </script>
+        <script src="{{ asset('styles/css/navmobile.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </body>
+</html>
+
+{# {{ parent()}} => permet de récupérer ce qu'il y a dans le bloc de base html et d'ajouter après #}
+{# les blocs effacent le contenu de base html ; donc mettre hors du bloc dans base html pour récupérer sur toutes les pages #}

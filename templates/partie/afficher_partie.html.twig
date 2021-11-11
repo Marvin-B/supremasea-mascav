@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block data_body %}
+    data-refresh="true"
+    data-id="#plateau"
+    data-url="{{ path('refresh_partie', {partie:partie.id}) }}"
+{% endblock %}
+
+{% block body %}
+    <div id="plateau">
+        {# appel de la méthode permettant l'affichage du plateau uniquement #}
+        {{ render(path('refresh_partie', {partie: partie.id})) }}
+    </div>
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
